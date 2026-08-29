@@ -1,359 +1,539 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Jean Roméo | Agriculture & Environnement</title>
+<title>Jean Roméo | Agriculture & Environnement</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    body {
-      background: #f4f7f2;
-      color: #243024;
-      line-height: 1.6;
-    }
+body {
+    background: #f4f8f2;
+    color: #243024;
+    line-height: 1.6;
+}
 
-    /* COVER */
-    .cover {
-      height: 300px;
-      width: 100%;
-      background:
-        linear-gradient(rgba(20,60,30,.25), rgba(20,60,30,.75)),
-        url("GHERO_™20260327_101638_🤟 BEST HUMAN SHOT LMC8.4 R15.jpg") center/cover no-repeat;
+/* =========================
+   COVER
+========================= */
 
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      text-align: center;
-      padding: 30px 20px;
-    }
+.hero {
+    position: relative;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0,70,35,0.30), rgba(0,45,20,0.55)),
+        url("Agriculture~3.jpg") center/cover no-repeat;
+}
 
-    .cover h1 {
-      color: white;
-      font-size: 32px;
-      text-shadow: 0 2px 8px #000;
-    }
+.hero-content {
+    width: 94%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-align: left;
+}
 
-    .cover p {
-      color: white;
-      font-size: 16px;
-      margin-top: 5px;
-    }
+.profile {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
 
-    /* PROFIL */
-    .profile-container {
-      max-width: 650px;
-      margin: auto;
-      padding: 0 20px 50px;
-      text-align: center;
-    }
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px #333;
+}
 
-    .profile {
-      width: 145px;
-      height: 145px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid white;
-      margin-top: -72px;
-      position: relative;
-      box-shadow: 0 4px 15px rgba(0,0,0,.25);
-    }
+.hero p {
+    font-size: 21px;
+    font-weight: bold;
+}
 
-    h2 {
-      margin-top: 15px;
-      color: #245c32;
-      font-size: 25px;
-    }
+/* =========================
+   TITRE
+========================= */
 
-    .profession {
-      color: #58705a;
-      margin-top: 8px;
-      font-size: 16px;
-    }
+.section-title {
+    text-align: center;
+    color: #176b3a;
+    font-size: 34px;
+    margin: 35px 10px 25px;
+}
 
-    /* BIO */
-    .card {
-      background: white;
-      margin-top: 22px;
-      padding: 22px;
-      border-radius: 16px;
-      text-align: left;
-      box-shadow: 0 3px 12px rgba(0,0,0,.08);
-    }
+/* =========================
+   DOMAINES
+========================= */
 
-    .card h3 {
-      color: #28733b;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
+.domains {
+    width: 94%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
-    /* DOMAINES */
-    .domains {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 15px;
-    }
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
 
-    .domain {
-      padding: 15px;
-      background: #eef6ed;
-      border-left: 5px solid #3b8c4a;
-      border-radius: 8px;
-    }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-    .domain strong {
-      color: #245c32;
-    }
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
 
-    /* TELEPHONE */
-    .phone {
-      text-align: center;
-      font-size: 18px;
-    }
+.card-content {
+    padding: 18px;
+}
 
-    /* WHATSAPP */
-    .whatsapp {
-      display: block;
-      margin-top: 15px;
-      padding: 15px;
-      background: #25d366;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 17px;
-    }
+.card h2 {
+    color: #176b3a;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
 
-    .whatsapp:hover {
-      opacity: .85;
-    }
+.card p {
+    font-size: 18px;
+}
 
-    /* FACEBOOK */
-    .facebook {
-      display: block;
-      margin-top: 12px;
-      padding: 15px;
-      background: #1877f2;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 17px;
-    }
+/* Grande carte */
 
-    .facebook:hover {
-      opacity: .85;
-    }
+.card-wide {
+    grid-column: 1 / 3;
+}
 
-    footer {
-      margin-top: 35px;
-      padding-top: 20px;
-      border-top: 1px solid #d8dfd6;
-      color: #708070;
-      font-size: 13px;
-      text-align: center;
-    }
+.card-wide img {
+    height: 220px;
+}
 
-    /* TELEPHONE */
-    @media (max-width: 600px) {
-      .cover {
-        height: 250px;
-      }
+/* =========================
+   GALERIE PHOTOS
+========================= */
 
-      .cover h1 {
-        font-size: 27px;
-      }
-
-      .profile {
-        width: 130px;
-        height: 130px;
-        margin-top: -65px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-    }/* GALERIE PHOTOS */
 .gallery {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 0 15px;
-  text-align: center;
+    max-width: 1000px;
+    margin: 45px auto;
+    padding: 0 15px;
+    text-align: center;
 }
 
 .gallery h2 {
-  color: #245c32;
-  font-size: 25px;
-  margin-bottom: 18px;
+    color: #176b3a;
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
 .gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
 }
 
-@media (max-width: 500px) {
-  .gallery-grid img {
-    height: 150px;
-  }
+.gallery-grid img:hover {
+    transform: scale(1.03);
 }
-  </style>
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.phone {
+    font-size: 21px;
+    font-weight: bold;
+    color: #176b3a;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.whatsapp {
+    background: #20b858;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 30px;
+    padding: 25px 15px;
+    background: #07552f;
+    color: white;
+    text-align: center;
+}
+
+/* =========================
+   TELEPHONE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .domains {
+        grid-template-columns: 1fr;
+    }
+
+    .card-wide {
+        grid-column: auto;
+    }
+
+    .card img,
+    .card-wide img {
+        height: 190px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid img {
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .contact {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- COVER -->
-  <section class="cover">
-    <div>
-      <h1>Jean Roméo</h1>
-      <p>Agriculture • Environnement • Valorisation des ressources</p>
+<!-- =========================
+     COVER
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <!-- SARY PROFIL -->
+        <img class="profile"
+             src="GHERO_™20260710_1.jpg"
+             alt="Jean Roméo">
+
+        <div>
+            <h1>RANDRIAMAROZANDRY Jean Roméo</h1>
+
+            <p>
+                Animateur Rural • Technicien Agricole •
+                Technicien en Biochimie Alimentaire
+            </p>
+        </div>
+
     </div>
-  </section>
+
+</header>
 
 
-  <!-- PROFIL -->
-  <main class="profile-container">
+<!-- =========================
+     DOMAINES
+========================= -->
 
-    <img
-      src="GHERO_™20250214_090637_🤟 BEST HUMAN SHOT LMC8.4 R15~2.jpg"
-      alt="Photo de Jean Roméo"
-      class="profile"
-    >
+<h2 class="section-title">
+    🌱 Mes domaines
+</h2>
 
-    <h2>RANDRIAMAROZANDRY Jean Roméo</h2>
+<section class="domains">
 
-    <p class="profession">
-      Animateur Rural • Technicien Agricole •
-      Technicien en Biochimie Alimentaire
-    </p>
+    <!-- AGRICULTURE -->
 
+    <article class="card">
 
-    <!-- À PROPOS -->
-    <section class="card">
+        <img src="Agriculture~2.jpg"
+             alt="Agriculture">
 
-      <h3>À propos de moi</h3>
+        <div class="card-content">
 
-      <p>
-        Je suis Animateur Rural, Technicien Agricole
-        et Technicien en Biochimie Alimentaire et
-        Valorisation des Ressources Naturelles, possède des compétences et une expérience sur le terrain.
-      </p>
+            <h2>🌱 Agriculture</h2>
 
-      <p style="margin-top:10px;">
-        Mon objectif est de contribuer au développement
-        d'une agriculture durable, à la protection de
-        l'environnement et à la valorisation des
-        ressources naturelles et agricoles.
-      </p>
+            <p>
+                Techniques agricoles et accompagnement
+                du développement rural.
+            </p>
 
-    </section>
-
-
-    <!-- DOMAINES -->
-    <section class="card">
-
-      <h3>Mes domaines</h3>
-
-      <div class="domains">
-
-        <div class="domain">
-          🌱 <strong>Agriculture</strong><br>
-          Techniques agricoles et accompagnement
-          du développement rural.
         </div>
 
-        <div class="domain">
-          🌿 <strong>Environnement</strong><br>
-          Protection de l'environnement et gestion
-          durable des ressources naturelles.
+    </article>
+
+
+    <!-- ENVIRONNEMENT -->
+
+    <article class="card">
+
+        <img src="environnement~2.jpg"
+             alt="Environnement">
+
+        <div class="card-content">
+
+            <h2>🌿 Environnement</h2>
+
+            <p>
+                Protection de l'environnement et gestion
+                durable des ressources naturelles.
+            </p>
+
         </div>
 
-        <div class="domain">
-          🌾 <strong>Développement rural</strong><br>
-          Animation et accompagnement des communautés
-          rurales.
+    </article>
+
+
+    <!-- DEVELOPPEMENT RURAL -->
+
+    <article class="card">
+
+        <img src="GHERO_™20250416_1.jpg"
+             alt="Développement rural">
+
+        <div class="card-content">
+
+            <h2>👥 Développement rural</h2>
+
+            <p>
+                Animation et accompagnement des
+                communautés rurales.
+            </p>
+
         </div>
 
-        <div class="domain">
-          🥬 <strong>Valorisation des produits</strong><br>
-          Transformation et valorisation des produits
-          agricoles et alimentaires.
+    </article>
+
+
+    <!-- VALORISATION -->
+
+    <article class="card">
+
+        <img src="Valoriser.jpg"
+             alt="Valorisation des produits">
+
+        <div class="card-content">
+
+            <h2>🥫 Valorisation des produits</h2>
+
+            <p>
+                Transformation et valorisation des
+                produits agricoles et alimentaires.
+            </p>
+
         </div>
 
-        <div class="domain">
-          ♻️ <strong>Ressources naturelles</strong><br>
-          Valorisation responsable et durable des
-          ressources naturelles.
+    </article>
+
+
+    <!-- RESSOURCES NATURELLES -->
+
+    <article class="card card-wide">
+
+        <img src="Durabilité~2.jpg"
+             alt="Ressources naturelles">
+
+        <div class="card-content">
+
+            <h2>♻️ Ressources naturelles</h2>
+
+            <p>
+                Valorisation responsable et durable
+                des ressources naturelles.
+            </p>
+
         </div>
 
-      </div>
+    </article>
 
-    </section>
-
-<!-- GALERIE PHOTOS -->
-<section class="gallery">
-  <h2>Galerie Photos</h2>
-
-  <div class="gallery-grid">
-    <img src="1730054107658~2.jpg" alt="Photo 1">
-    <img src="Agriculture~2.jpg" alt="Photo 2">
-    <img src="Agriculture~3.jpg" alt="Photo 3">
-    <img src="Durabilité~2.jpg" alt="Photo 4">
-    <img src="Valoriser.jpg" alt="Photo 5">
-    <img src="environnement~2.jpg" alt="Photo 6">
-  </div>
 </section>
-    <!-- CONTACT -->
-    <section class="card">
-
-      <h3>Contact</h3>
-
-      <div class="phone">
-        📞 <strong>0322605263</strong>
-      </div>
-
-      <a
-        class="whatsapp"
-        href="https://wa.me/261322605263"
-        target="_blank">
-        💬 Contacter sur WhatsApp
-      </a>
-
-      <a
-        class="facebook"
-        href="Meo Russ Young"
-        target="_blank">
-        📘 Facebook
-      </a>
-
-    </section>
 
 
-    <footer>
-      © 2026 Jean Roméo — Agriculture, Environnement
-      et Valorisation des Ressources
-    </footer>
+<!-- =========================
+     GALERIE PHOTOS
+========================= -->
 
-  </main>
+<section class="gallery">
+
+    <h2>📸 Galerie photos</h2>
+
+    <div class="gallery-grid">
+
+        <img src="Agriculture~2.jpg"
+             alt="Agriculture">
+
+        <img src="Agriculture~3.jpg"
+             alt="Agriculture">
+
+        <img src="environnement~2.jpg"
+             alt="Environnement">
+
+        <img src="Valoriser.jpg"
+             alt="Valorisation">
+
+        <img src="Durabilité~2.jpg"
+             alt="Ressources naturelles">
+
+        <img src="GHERO_™20250416_1.jpg"
+             alt="Développement rural">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact">
+
+    <div class="phone">
+        📞 Contact : 0322605263
+    </div>
+
+    <div class="buttons">
+
+        <a class="btn whatsapp"
+           href="https://wa.me/261322605263"
+           target="_blank">
+            💬 WhatsApp
+        </a>
+
+        <a class="btn facebook"
+           href="https://www.facebook.com/"
+           target="_blank">
+            f Facebook
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 Jean Roméo —
+    Agriculture, Environnement et
+    Valorisation des Ressources
+
+</footer>
 
 </body>
 </html>
