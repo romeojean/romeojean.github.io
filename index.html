@@ -1,654 +1,262 @@
-   <!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Jean Roméo | Agriculture & Environnement</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: #f4f8f2;
-    color: #243024;
-    line-height: 1.6;
-}
-
-/* =========================
-   COVER
-========================= */
-
-.hero {
-    position: relative;
-    min-height: 330px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    background:
-        linear-gradient(rgba(0,70,35,0.30), rgba(0,45,20,0.55)),
-        url("GHERO_™20250214_090637_🤟 BEST HUMAN SHOT LMC8.4 R15~2.jpg") center/cover no-repeat;
-}
-
-.hero-content {
-    width: 94%;
-    max-width: 900px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    text-align: left;
-}
-
-.profile {
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px #333;
-}
-
-.hero p {
-    font-size: 21px;
-    font-weight: bold;
-}
-
-/* =========================
-   TITRE
-========================= */
-
-.section-title {
-    text-align: center;
-    color: #176b3a;
-    font-size: 34px;
-    margin: 35px 10px 25px;
-}
-
-/* =========================
-   DOMAINES
-========================= */
-
-.domains {
-    width: 94%;
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 18px;
-}
-
-.card h2 {
-    color: #176b3a;
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 18px;
-}
-
-/* Grande carte */
-
-.card-wide {
-    grid-column: 1 / 3;
-}
-
-.card-wide img {
-    height: 220px;
-}
-
-/* =========================
-   GALERIE PHOTOS
-========================= */
-
-.gallery {
-    max-width: 1000px;
-    margin: 45px auto;
-    padding: 0 15px;
-    text-align: center;
-}
-
-.gallery h2 {
-    color: #176b3a;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.03);
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 25px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.phone {
-    font-size: 21px;
-    font-weight: bold;
-    color: #176b3a;
-}
-
-.buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-.whatsapp {
-    background: #20b858;
-}
-
-.facebook {
-    background: #1877f2;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    margin-top: 30px;
-    padding: 25px 15px;
-    background: #07552f;
-    color: white;
-    text-align: center;
-}
-
-/* =========================
-   TELEPHONE
-========================= */
-
-@media (max-width: 700px) {
-
-    .hero {
-        min-height: 430px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site professionnel de RANDRIAMAROZANDRY Jean Roméo — Agriculture, Biochimie alimentaire et ressources naturelles.">
+  <title>Jean Roméo | Agriculture • Biochimie • Nature</title>
+  <style>
+    :root{
+      --green:#159447;
+      --green-dark:#08783a;
+      --blue:#063d70;
+      --blue-dark:#062d50;
+      --light:#f3faf7;
+      --text:#123654;
+      --muted:#5e7285;
+      --white:#fff;
+      --shadow:0 12px 35px rgba(10,55,80,.10);
+      --radius:22px;
     }
-
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);background:#fff;line-height:1.6;
     }
-
-    .profile {
-        width: 130px;
-        height: 130px;
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);
+      backdrop-filter:blur(12px);border-bottom:1px solid #e7eef2;
     }
-
-    .hero h1 {
-        font-size: 28px;
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue)}
+    .brand-mark{
+      width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--blue));
+      display:grid;place-items:center;color:#fff;font-size:24px;
     }
-
-    .hero p {
-        font-size: 17px;
+    .brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+    nav{display:flex;gap:27px;align-items:center}
+    nav a{font-size:14px;font-weight:600}
+    nav a:hover,nav a.active{color:var(--green)}
+    .cv-btn,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;
     }
-
-    .domains {
-        grid-template-columns: 1fr;
+    .cv-btn{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff;font-size:13px}
+    .menu{display:none;font-size:26px;background:none;border:0;color:var(--blue)}
+    .hero{
+      min-height:570px;display:grid;align-items:center;position:relative;overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 43%,rgba(255,255,255,.10) 75%),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover;
     }
-
-    .card-wide {
-        grid-column: auto;
+    .hero-content{padding:80px 0}
+    .eyebrow{color:var(--green);font-weight:900;letter-spacing:.7px;text-transform:uppercase;font-size:13px}
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.02;margin:14px 0;color:var(--blue)}
+    h1 span{color:var(--green)}
+    .hero p{max-width:650px;color:#29465e;font-size:18px}
+    .hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+    .btn-primary{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff}
+    .btn-secondary{border:1px solid #d8e5eb;background:#fff;color:var(--blue)}
+    section{padding:90px 0}
+    .section-label{color:var(--green);font-weight:900;font-size:14px}
+    .section-title{font-size:clamp(30px,4vw,46px);line-height:1.15;color:var(--blue);margin:7px 0 15px}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+    .portrait{
+      border-radius:40px;overflow:hidden;box-shadow:var(--shadow);position:relative;
     }
-
-    .card img,
-    .card-wide img {
-        height: 190px;
+    .portrait img{width:100%;height:470px;object-fit:cover}
+    .quote{
+      position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);
+      padding:14px 18px;border-radius:15px;font-weight:800;color:var(--green-dark)
     }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .about-text{color:var(--muted);font-size:17px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
+    .stat{padding:18px;border:1px solid #e5edf1;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.04)}
+    .stat strong{display:block;color:var(--blue);font-size:19px}
+    .skills{background:linear-gradient(180deg,#f3faf7,#eef7fb)}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+    .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid #e9f0f3}
+    .card-body{padding:25px}
+    .icon{font-size:32px}
+    .card h3{color:var(--blue);margin:8px 0}
+    .card ul{list-style:none;color:var(--muted);font-size:14px}
+    .card li{margin:7px 0}.card li::before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+    .card img{height:190px;width:100%;object-fit:cover}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+    .project{border:1px solid #e5edf1;border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .project img{height:210px;width:100%;object-fit:cover}
+    .project div{padding:20px}.project h3{color:var(--blue);font-size:18px}.project p{color:var(--muted);font-size:14px}
+    .gallery{background:#f4fafc}
+    .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}
+    .gallery-grid img{height:180px;width:100%;object-fit:cover;border-radius:16px}
+    .contact{background:linear-gradient(135deg,var(--blue-dark),#07517a);color:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+    .contact h2{color:#fff}.contact p{color:#d8e7ef}
+    .contact-list{margin-top:25px;display:grid;gap:12px}
+    form{display:grid;gap:13px}
+    input,textarea{width:100%;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;outline:none}
+    input::placeholder,textarea::placeholder{color:#c7d7df}
+    textarea{min-height:140px;resize:vertical}
+    .send{background:linear-gradient(90deg,#18b950,#0b65a2);color:#fff}
+    footer{background:#041f36;color:#c8d8e1;padding:25px 0;font-size:13px}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:900px){
+      nav,.cv-btn{display:none}.menu{display:block}
+      .hero{min-height:650px;background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.55)),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80") center/cover}
+      .about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
+      .skills-grid,.projects-grid{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:repeat(3,1fr)}
     }
-
-    .gallery-grid img {
-        height: 150px;
+    @media(max-width:600px){
+      section{padding:65px 0}.hero-content{padding:55px 0}
+      h1{font-size:46px}.hero p{font-size:16px}
+      .stats,.skills-grid,.projects-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .gallery-grid img{height:145px}
+      .portrait img{height:390px}
     }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .contact {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .buttons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 450px) {
-
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero h1 {
-        font-size: 24px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .card h2 {
-        font-size: 22px;
-    }
-
-    .card p {
-        font-size: 16px;
-    }
-}
-   <!-- MES RÉALISATIONS --><section class="realisations" id="realisations">  <h2>🌱 Mes réalisations</h2>  <p class="realisations-intro">
-    Découvrez quelques-unes de mes réalisations, expériences et travaux
-    réalisés au fil des années dans les domaines de l'agriculture,
-    de l'environnement, de l'animation rurale, de la biochimie alimentaire
-    et de la valorisation des ressources naturelles.
-  </p>  <div class="realisations-grid"><!-- RÉALISATION 1 -->
-<article class="realisation-card">
-  <img src="images/realisation1.jpg" alt="Réalisation agricole">
-  <div class="realisation-content">
-    <span class="realisation-year">2022</span>
-    <h3>🌾 Travaux agricoles</h3>
-    <p>
-      Présentation de mes travaux et expériences dans le domaine
-      de l'agriculture et du développement rural.
-    </p>
-  </div>
-</article>
-
-<!-- RÉALISATION 2 -->
-<article class="realisation-card">
-  <img src="images/realisation2.jpg" alt="Animation rurale">
-  <div class="realisation-content">
-    <span class="realisation-year">2023</span>
-    <h3>👨‍🌾 Animation rurale</h3>
-    <p>
-      Activités d'animation, de sensibilisation et d'accompagnement
-      auprès des communautés rurales.
-    </p>
-  </div>
-</article>
-
-<!-- RÉALISATION 3 -->
-<article class="realisation-card">
-  <img src="images/realisation3.jpg" alt="Transformation alimentaire">
-  <div class="realisation-content">
-    <span class="realisation-year">2024</span>
-    <h3>🧪 Transformation alimentaire</h3>
-    <p>
-      Travaux liés à la transformation et à la valorisation
-      des produits agricoles et alimentaires.
-    </p>
-  </div>
-</article>
-
-<!-- RÉALISATION 4 -->
-<article class="realisation-card">
-  <img src="images/realisation4.jpg" alt="Protection de l'environnement">
-  <div class="realisation-content">
-    <span class="realisation-year">2025</span>
-    <h3>🌱 Environnement</h3>
-    <p>
-      Actions et activités liées à la protection de l'environnement
-      et à la valorisation des ressources naturelles.
-    </p>
-  </div>
-</article>
-
-  </div></section>
-</style>
+  </style>
 </head>
-
 <body>
-
-<!-- =========================
-     COVER
-========================= -->
-
-<header class="hero">
-
-    <div class="hero-content">
-
-        <!-- SARY PROFIL -->
-        <img class="profile"
-             src="1730054107658~2.jpg"
-             alt="Jean Roméo">
-
-        <div>
-            <h1>RANDRIAMAROZANDRY Jean Roméo</h1>
-
-            <p>
-                Animateur Rural • Technicien Agricole •
-                Technicien en Biochimie Alimentaire
-            </p>
-        </div>
-
-    </div>
-
+<header>
+  <div class="container nav">
+    <a class="brand" href="#accueil">
+      <div class="brand-mark">🌱</div>
+      <div>Jean Roméo<small>Agriculture • Biochimie • Nature</small></div>
+    </a>
+    <nav>
+      <a class="active" href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cv-btn" href="#" onclick="downloadCV()">⬇ Télécharger mon CV</a>
+    <button class="menu" onclick="alert('Sur mobile, utilisez les sections en faisant défiler la page.')">☰</button>
+  </div>
 </header>
 
-
-<!-- =========================
-     DOMAINES
-========================= -->
-
-<h2 class="section-title">
-    🌱 Mes domaines
-</h2>
-
-<section class="domains">
-
-    <!-- AGRICULTURE -->
-
-    <article class="card">
-
-        <img src="Agriculture~2.jpg"
-             alt="Agriculture">
-
-        <div class="card-content">
-
-            <h2>🌱 Agriculture</h2>
-
-            <p>
-                Techniques agricoles et accompagnement
-                du développement rural.
-            </p>
-
-        </div>
-
-    </article>
-
-
-    <!-- ENVIRONNEMENT -->
-
-    <article class="card">
-
-        <img src="environnement~2.jpg"
-             alt="Environnement">
-
-        <div class="card-content">
-
-            <h2>🌿 Environnement</h2>
-
-            <p>
-                Protection de l'environnement et gestion
-                durable des ressources naturelles.
-            </p>
-
-        </div>
-
-    </article>
-
-
-    <!-- DEVELOPPEMENT RURAL -->
-
-    <article class="card">
-
-        <img src="Rural.jpg"
-             alt="Développement rural">
-
-        <div class="card-content">
-
-            <h2>👥 Développement rural</h2>
-
-            <p>
-                Animation et accompagnement des
-                communautés rurales.
-            </p>
-
-        </div>
-
-    </article>
-
-
-    <!-- VALORISATION -->
-
-    <article class="card">
-
-        <img src="chips.jpg"
-             alt="Valorisation des produits">
-
-        <div class="card-content">
-
-            <h2>🥫 Valorisation des produits</h2>
-
-            <p>
-                Transformation et valorisation des
-                produits agricoles et alimentaires.
-            </p>
-
-        </div>
-
-    </article>
-
-
-    <!-- RESSOURCES NATURELLES -->
-
-    <article class="card card-wide">
-
-        <img src="Valoriser.jpg"
-             alt="Ressources naturelles">
-
-        <div class="card-content">
-
-            <h2>♻️ Ressources naturelles</h2>
-
-            <p>
-                Valorisation responsable et durable
-                des ressources naturelles.
-            </p>
-
-        </div>
-
-    </article>
-
-</section>
-
-
-<!-- =========================
-     GALERIE PHOTOS
-========================= -->
-
-<section class="gallery">
-
-    <h2>📸 Galerie photos</h2>
-
-    <div class="gallery-grid">
-
-        <img src="Agriculture~2.jpg"
-             alt="Agriculture">
-
-        <img src="Rural.jpg"
-             alt="Agriculture">
-
-        <img src="environnement~2.jpg"
-             alt="Environnement">
-
-        <img src="chips.jpg"
-             alt="Valorisation">
-
-        <img src="Valoriser.jpg"
-             alt="Ressources naturelles">
-
-        <img src="Développement durable.jpg"
-             alt="Développement rural">
-
+<main>
+  <section id="accueil" class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Bienvenue sur mon site</div>
+      <h1>RANDRIAMAROZANDRY<br><span>Jean Roméo</span></h1>
+      <p><strong>Animateur Rural • Technicien Agricole • Biochimiste</strong><br>
+      Technicien en biochimie alimentaire et valorisation des ressources naturelles.</p>
+      <p style="margin-top:12px;font-style:italic">Agir aujourd'hui pour une agriculture durable et un avenir meilleur.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">✉ Me contacter →</a>
+        <a class="btn btn-secondary" href="#projets">Découvrir mes projets</a>
+      </div>
     </div>
+  </section>
 
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact">
-
-    <div class="phone">
-        📞 Contact : 0322605263
+  <section id="apropos">
+    <div class="container about-grid">
+      <div class="portrait">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=85" alt="Agriculture">
+        <div class="quote">« La nature est une richesse à préserver. »</div>
+      </div>
+      <div>
+        <div class="section-label">À propos de moi</div>
+        <h2 class="section-title">Qui suis-je ?</h2>
+        <p class="about-text">Je suis RANDRIAMAROZANDRY Jean Roméo, passionné par le développement rural, l'agriculture durable et la valorisation des ressources naturelles. Avec une formation en biochimie alimentaire et une expérience de terrain, je m'engage à contribuer à des solutions innovantes pour améliorer la production agricole, la sécurité alimentaire et la préservation de notre environnement.</p>
+        <div class="stats">
+          <div class="stat"><strong>+5 ans</strong><span>d'expérience</span></div>
+          <div class="stat"><strong>Madagascar</strong><span>et à l'international</span></div>
+          <div class="stat"><strong>Passionné</strong><span>par la nature</span></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="buttons">
-
-        <a class="btn whatsapp"
-           href="https://wa.me/261322605263"
-           target="_blank">
-            💬 WhatsApp
-        </a>
-
-        <a class="btn facebook"
-           href="https://www.facebook.com/"
-           target="_blank">
-            f Facebook
-        </a>
-
+  <section id="competences" class="skills">
+    <div class="container">
+      <div class="section-label">Mes compétences</div>
+      <h2 class="section-title">Des compétences au service<br>du développement durable</h2>
+      <div class="skills-grid">
+        <article class="card"><div class="card-body"><div class="icon">🌱</div><h3>Agriculture</h3><ul><li>Production agricole</li><li>Conseil et accompagnement</li><li>Gestion des exploitations</li></ul></div><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Agriculture"></article>
+        <article class="card"><div class="card-body"><div class="icon">🧪</div><h3>Biochimie alimentaire</h3><ul><li>Analyse des aliments</li><li>Transformation alimentaire</li><li>Valorisation des ressources</li></ul></div><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Biochimie"></article>
+        <article class="card"><div class="card-body"><div class="icon">🌳</div><h3>Ressources naturelles</h3><ul><li>Protection de l'environnement</li><li>Gestion durable</li><li>Valorisation des ressources</li></ul></div><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Nature"></article>
+      </div>
     </div>
+  </section>
 
-</section>
-<!-- MES RÉALISATIONS --><section class="realisations" id="realisations">  <h2>🌱 Mes réalisations</h2>  <p class="realisations-intro">
-    Découvrez quelques-unes de mes réalisations, expériences et travaux
-    réalisés au fil des années dans les domaines de l'agriculture,
-    de l'environnement, de l'animation rurale, de la biochimie alimentaire
-    et de la valorisation des ressources naturelles.
-  </p>  <div class="realisations-grid"><!-- RÉALISATION 1 -->
-<article class="realisation-card">
-  <img src="images/realisation1.jpg" alt="Réalisation agricole">
-  <div class="realisation-content">
-    <span class="realisation-year">2022</span>
-    <h3>🌾 Travaux agricoles</h3>
-    <p>
-      Présentation de mes travaux et expériences dans le domaine
-      de l'agriculture et du développement rural.
-    </p>
-  </div>
-</article>
+  <section id="projets">
+    <div class="container">
+      <div class="section-label">Mes projets</div>
+      <h2 class="section-title">Des actions concrètes</h2>
+      <div class="projects-grid">
+        <article class="project"><img src="https://images.unsplash.com/photo-1492496913980-501348b61469?auto=format&fit=crop&w=900&q=80" alt=""><div><h3>Amélioration des rendements agricoles</h3><p>Soutien aux producteurs locaux.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt=""><div><h3>Analyse et valorisation des produits alimentaires</h3><p>Qualité et sécurité alimentaire.</p></div></article>
+        <article class="project"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=80" alt=""><div><h3>Protection des ressources naturelles</h3><p>Agir pour l'environnement.</p></div></article>
+      </div>
+    </div>
+  </section>
 
-<!-- RÉALISATION 2 -->
-<article class="realisation-card">
-  <img src="images/realisation2.jpg" alt="Animation rurale">
-  <div class="realisation-content">
-    <span class="realisation-year">2023</span>
-    <h3>👨‍🌾 Animation rurale</h3>
-    <p>
-      Activités d'animation, de sensibilisation et d'accompagnement
-      auprès des communautés rurales.
-    </p>
-  </div>
-</article>
+  <section id="galerie" class="gallery">
+    <div class="container">
+      <div class="section-label">Ma galerie</div>
+      <h2 class="section-title">Quelques moments en images</h2>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="">
+      </div>
+    </div>
+  </section>
 
-<!-- RÉALISATION 3 -->
-<article class="realisation-card">
-  <img src="images/realisation3.jpg" alt="Transformation alimentaire">
-  <div class="realisation-content">
-    <span class="realisation-year">2024</span>
-    <h3>🧪 Transformation alimentaire</h3>
-    <p>
-      Travaux liés à la transformation et à la valorisation
-      des produits agricoles et alimentaires.
-    </p>
-  </div>
-</article>
-
-<!-- RÉALISATION 4 -->
-<article class="realisation-card">
-  <img src="images/realisation4.jpg" alt="Protection de l'environnement">
-  <div class="realisation-content">
-    <span class="realisation-year">2025</span>
-    <h3>🌱 Environnement</h3>
-    <p>
-      Actions et activités liées à la protection de l'environnement
-      et à la valorisation des ressources naturelles.
-    </p>
-  </div>
-</article>
-
-  </div></section>
-
-<!-- =========================
-     FOOTER
-========================= -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-label">Me contacter</div>
+        <h2 class="section-title">Construisons ensemble des solutions durables.</h2>
+        <p>Vous avez un projet en agriculture, biochimie alimentaire ou valorisation des ressources naturelles ? Écrivez-moi.</p>
+        <div class="contact-list">
+          <div>📞 +261 XX XX XXX XX</div>
+          <div>✉ jeanromeo@email.com</div>
+          <div>📍 Madagascar</div>
+        </div>
+      </div>
+      <form onsubmit="sendMessage(event)">
+        <input required type="text" placeholder="Votre nom">
+        <input required type="email" placeholder="Votre email">
+        <textarea required placeholder="Votre message"></textarea>
+        <button class="btn send" type="submit">Envoyer →</button>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer>
-
-    © 2026 Jean Roméo —
-    Agriculture, Environnement et
-    Valorisation des Ressources
-
+  <div class="container footer-row">
+    <div>© 2026 RANDRIAMAROZANDRY Jean Roméo. Tous droits réservés.</div>
+    <div>Français • Malagasy • English</div>
+  </div>
 </footer>
 
+<script>
+  function sendMessage(e){
+    e.preventDefault();
+    alert("Merci ! Le formulaire est prêt. Pour recevoir réellement les messages, il faudra connecter un service de formulaire ou une adresse email.");
+  }
+  function downloadCV(){
+    alert("Ajoutez votre fichier CV sous le nom CV-Jean-Romeo.pdf dans le dossier du site, puis remplacez ce bouton par un lien vers ce fichier.");
+  }
+  const links=[...document.querySelectorAll("nav a")];
+  const sections=[...document.querySelectorAll("main section")];
+  window.addEventListener("scroll",()=>{
+    let current="";
+    sections.forEach(s=>{if(scrollY>=s.offsetTop-140) current=s.id});
+    links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+  });
+</script>
 </body>
 </html>
