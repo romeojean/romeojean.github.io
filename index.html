@@ -239,6 +239,91 @@
   .projet h3 {
     font-size: 20px;
   }
+  /* =========================
+   PUBLICATIONS
+========================= */
+
+.publications{
+  background:#fff;
+}
+
+.publications-intro{
+  max-width:760px;
+  color:var(--muted);
+  font-size:17px;
+  margin-bottom:35px;
+}
+
+.publications-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.publication{
+  border:1px solid #e5edf1;
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:var(--shadow);
+  transition:transform .25s,box-shadow .25s;
+}
+
+.publication:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 40px rgba(10,55,80,.14);
+}
+
+.publication img{
+  height:190px;
+  width:100%;
+  object-fit:cover;
+}
+
+.publication-body{
+  padding:22px;
+}
+
+.publication-meta{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--green);
+}
+
+.publication h3{
+  color:var(--blue);
+  font-size:20px;
+  line-height:1.3;
+  margin-bottom:9px;
+}
+
+.publication p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.publication-link{
+  color:var(--green-dark);
+  font-weight:900;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .publications-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:600px){
+  .publications-grid{
+    grid-template-columns:1fr;
+  }
 }</style>
 </head>
 <body>
@@ -253,8 +338,11 @@
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
+      <a href="#publications">Publications</a>
       <a href="#galerie">Galerie</a>
       <a href="#contact">Contact</a>
+      <a href="#Facebook">Facebook</a>
+      <a href="#WhatsApp">WhatsApp</a>
     </nav>
     <a class="cv-btn" href="#" onclick="downloadCV()">⬇ Télécharger mon CV</a>
     <button class="menu" onclick="alert('Sur mobile, utilisez les sections en faisant défiler la page.')">☰</button>
@@ -519,7 +607,112 @@
       </div>
     </div>
   </section>
+<section id="publications" class="publications">
+  <div class="container">
 
+    <div class="section-label">Mes publications</div>
+
+    <h2 class="section-title">
+      Articles, recherches et actualités
+    </h2>
+
+    <p class="publications-intro">
+      Retrouvez ici mes articles, réflexions, travaux de recherche
+      et actualités autour de l’agriculture durable, de l’environnement,
+      de la biochimie alimentaire et du développement rural.
+    </p>
+
+    <div class="publications-grid">
+
+      <article class="publication">
+        <img
+          src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80"
+          alt="Agriculture durable"
+        >
+
+        <div class="publication-body">
+
+          <div class="publication-meta">
+            🌱 AGRICULTURE • 2026
+          </div>
+
+          <h3>
+            Vers une agriculture plus durable à Madagascar
+          </h3>
+
+          <p>
+            Réflexion sur les pratiques agricoles durables
+            et leur importance pour les communautés rurales.
+          </p>
+
+          <a class="publication-link" href="#">
+            Lire la publication →
+          </a>
+
+        </div>
+      </article>
+
+
+      <article class="publication">
+        <img
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
+          alt="Protection de l'environnement"
+        >
+
+        <div class="publication-body">
+
+          <div class="publication-meta">
+            🌳 ENVIRONNEMENT • 2026
+          </div>
+
+          <h3>
+            Pourquoi protéger nos ressources naturelles ?
+          </h3>
+
+          <p>
+            Quelques pistes pour renforcer la protection
+            de l’environnement avec la participation des communautés locales.
+          </p>
+
+          <a class="publication-link" href="#">
+            Lire la publication →
+          </a>
+
+        </div>
+      </article>
+
+
+      <article class="publication">
+        <img
+          src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80"
+          alt="Biochimie alimentaire"
+        >
+
+        <div class="publication-body">
+
+          <div class="publication-meta">
+            🧪 BIOCHIMIE • 2026
+          </div>
+
+          <h3>
+            Valorisation des produits alimentaires locaux
+          </h3>
+
+          <p>
+            Présentation de pistes de transformation et de valorisation
+            pour améliorer la qualité et la valeur des produits.
+          </p>
+
+          <a class="publication-link" href="#">
+            Lire la publication →
+          </a>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
   <section id="galerie" class="gallery">
     <div class="container">
       <div class="section-label">Ma galerie</div>
