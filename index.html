@@ -118,7 +118,128 @@
       .gallery-grid img{height:145px}
       .portrait img{height:390px}
     }
-  </style>
+ /* =========================
+   MES PROJETS
+========================= */
+
+#projets {
+  background: #f3faf7;
+  padding: 90px 0;
+}
+
+.projets-intro {
+  max-width: 780px;
+  margin: 0 auto 45px;
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.grille-projets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.projet {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  border: 1px solid #dceee8;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: hidden;
+}
+
+.projet:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(10, 55, 80, .14);
+}
+
+.projet-annee {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--blue)
+  );
+  color: white;
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.projet h3 {
+  font-size: 23px;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.projet-lieu {
+  color: var(--green-dark);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.projet p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 15px;
+}
+
+.projet-resultat {
+  background: #eef9f4;
+  border-left: 4px solid var(--green);
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: var(--text);
+}
+
+.projet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.projet-tags span {
+  background: #edf6f5;
+  color: var(--green-dark);
+  border: 1px solid #d4e9e3;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.projet-important {
+  border: 2px solid var(--green);
+}
+
+/* Téléphone */
+@media (max-width: 760px) {
+
+  #projets {
+    padding: 65px 0;
+  }
+
+  .grille-projets {
+    grid-template-columns: 1fr;
+  }
+
+  .projet {
+    padding: 24px;
+  }
+
+  .projet h3 {
+    font-size: 20px;
+  }
+}</style>
 </head>
 <body>
 <header>
@@ -187,6 +308,207 @@
   </section>
 
   <section id="projets">
+  <div class="container">
+
+    <div class="section-label">MES PROJETS</div>
+
+    <h2 class="section-title">
+      Des actions concrètes pour l'agriculture et la protection de l'environnement
+    </h2>
+
+    <p class="projets-intro">
+      À travers mes activités de terrain, je participe à l'accompagnement
+      des communautés locales, au développement des pratiques agricoles
+      durables et à la protection des ressources naturelles dans la région SAVA.
+    </p>
+
+    <div class="grille-projets">
+
+      <!-- PROJET 2024 -->
+      <article class="projet">
+        <div class="projet-annee">2024</div>
+
+        <div class="projet-contenu">
+          <h3>
+            Formation et valorisation des cultures vivrières
+          </h3>
+
+          <p class="projet-lieu">
+            📍 Ambanitaza – Fokontany Andrapengy,
+            Commune Rurale Ampahana, Région SAVA, Madagascar
+          </p>
+
+          <p>
+            Organisation de formations destinées aux communautés vivant
+            autour d'Ambanitaza et de la VOI Andrapengy sur les différentes
+            étapes des cultures vivrières : préparation, croissance,
+            fructification et floraison.
+          </p>
+
+          <p>
+            Les formations ont été accompagnées par des activités pratiques
+            permettant aux participants de mettre directement en application
+            les techniques apprises et de produire les cultures présentées.
+          </p>
+
+          <div class="projet-tags">
+            <span>Agriculture</span>
+            <span>Formation</span>
+            <span>Production</span>
+            <span>Communauté locale</span>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- PROJET 2025 -->
+      <article class="projet">
+        <div class="projet-annee">2025</div>
+
+        <div class="projet-contenu">
+          <h3>
+            Renforcement de la collaboration entre les communautés
+          </h3>
+
+          <p class="projet-lieu">
+            📍 Ambanitaza et les communautés environnantes – Région SAVA
+          </p>
+
+          <p>
+            Mise en place et renforcement de la collaboration entre
+            les sept comités communautaires autour d'Ambanitaza :
+            Maromokotra, Andrapengy, Andasilava, Ampobe, Betaomby,
+            Tsaratanana et Beamponga.
+          </p>
+
+          <p>
+            Les activités ont porté sur l'organisation de formations,
+            la mise à disposition de matériels nécessaires à la production
+            et l'accompagnement des communautés dans la réalisation de
+            leurs besoins prioritaires.
+          </p>
+
+          <p>
+            Une distribution de volailles a également été réalisée afin
+            de soutenir les activités communautaires et de contribuer
+            indirectement au renforcement de la protection de l'environnement.
+          </p>
+
+          <div class="projet-tags">
+            <span>Collaboration</span>
+            <span>Formation</span>
+            <span>Développement local</span>
+            <span>Environnement</span>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- PROJET 2026 -->
+      <article class="projet projet-important">
+        <div class="projet-annee">2026</div>
+
+        <div class="projet-contenu">
+          <h3>
+            Reboisement et restauration environnementale à Ambanitaza
+          </h3>
+
+          <p class="projet-lieu">
+            📍 Ambanitaza – Région SAVA, Madagascar
+          </p>
+
+          <p>
+            Réalisation d'une opération de plantation de
+            <strong>20 000 plants d'arbres</strong> sur le massif
+            d'Ambanitaza, en collaboration avec les communautés
+            vivant dans les zones environnantes.
+          </p>
+
+          <p>
+            Cette action vise à renforcer la restauration des espaces
+            dégradés, à favoriser la participation communautaire et
+            à contribuer durablement à la protection des ressources naturelles.
+          </p>
+
+          <div class="projet-resultat">
+            🌱 <strong>Résultat :</strong> 20 000 plants mis en terre
+          </div>
+
+          <div class="projet-tags">
+            <span>Reboisement</span>
+            <span>20 000 plants</span>
+            <span>Environnement</span>
+            <span>Participation communautaire</span>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- PROJET PEPINIERE -->
+      <article class="projet">
+        <div class="projet-annee">2026</div>
+
+        <div class="projet-contenu">
+          <h3>
+            Mise en place et distribution de pépinières
+          </h3>
+
+          <p>
+            Mise en place d'un système de pépinières et distribution
+            de plants aux membres des associations communautaires
+            autour d'Ambanitaza.
+          </p>
+
+          <p>
+            Cette démarche permet de responsabiliser chaque membre
+            dans la production et l'entretien des plants destinés
+            aux actions de restauration et de protection de l'environnement.
+          </p>
+
+          <div class="projet-tags">
+            <span>Pépinière</span>
+            <span>Reboisement</span>
+            <span>Associations</span>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- PROJET TRANSFERT DE GESTION -->
+      <article class="projet">
+        <div class="projet-annee">2026</div>
+
+        <div class="projet-contenu">
+          <h3>
+            Transfert de gestion entre la VOI et la DREED
+          </h3>
+
+          <p>
+            Contribution à la réalisation du transfert de gestion
+            entre les communautés organisées au sein de la
+            <strong>VOI</strong> et la
+            <strong>Direction Régionale de l'Environnement et du
+            Développement Durable (DREED)</strong>.
+          </p>
+
+          <p>
+            Cette démarche renforce la participation des communautés
+            locales dans la gestion durable et la protection des
+            ressources naturelles.
+          </p>
+
+          <div class="projet-tags">
+            <span>VOI</span>
+            <span>DREED</span>
+            <span>Gestion durable</span>
+            <span>Environnement</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
     <div class="container">
       <div class="section-label">Mes projets</div>
       <h2 class="section-title">Des actions concrètes</h2>
