@@ -239,91 +239,187 @@
   .projet h3 {
     font-size: 20px;
   }
-  /* =========================
+/* =========================
    PUBLICATIONS
 ========================= */
 
-.publications{
-  background:#fff;
+.publications-section {
+  background: #f3faf7;
+  padding: 90px 0;
 }
 
-.publications-intro{
-  max-width:760px;
-  color:var(--muted);
-  font-size:17px;
-  margin-bottom:35px;
+.publications-section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.publications-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
+/* En-tête */
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
 }
 
-.publication{
-  border:1px solid #e5edf1;
-  border-radius:20px;
-  overflow:hidden;
-  background:#fff;
-  box-shadow:var(--shadow);
-  transition:transform .25s,box-shadow .25s;
+.section-badge {
+  display: inline-block;
+  color: #168a5b;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.publication:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 40px rgba(10,55,80,.14);
+.section-header h2 {
+  font-size: 38px;
+  margin: 0 0 15px;
+  color: #123b31;
 }
 
-.publication img{
-  height:190px;
-  width:100%;
-  object-fit:cover;
+.section-header p {
+  color: #64746e;
+  line-height: 1.7;
 }
 
-.publication-body{
-  padding:22px;
+/* Grille */
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
-.publication-meta{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-  margin-bottom:10px;
-  font-size:12px;
-  font-weight:800;
-  color:var(--green);
+/* Carte */
+
+.publication-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.publication h3{
-  color:var(--blue);
-  font-size:20px;
-  line-height:1.3;
-  margin-bottom:9px;
+.publication-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
-.publication p{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:15px;
+/* Image */
+
+.publication-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #dfeee8;
 }
 
-.publication-link{
-  color:var(--green-dark);
-  font-weight:900;
-  font-size:14px;
+.publication-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-@media(max-width:900px){
-  .publications-grid{
-    grid-template-columns:1fr 1fr;
+.publication-year {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #168a5b;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Contenu */
+
+.publication-content {
+  padding: 28px;
+}
+
+.publication-type {
+  font-size: 12px;
+  color: #168a5b;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.publication-content h3 {
+  color: #123b31;
+  font-size: 21px;
+  line-height: 1.4;
+  margin: 10px 0 18px;
+}
+
+.publication-authors {
+  border-left: 3px solid #168a5b;
+  padding-left: 13px;
+  margin-bottom: 18px;
+}
+
+.publication-authors p {
+  margin: 4px 0;
+  color: #566861;
+  font-size: 14px;
+}
+
+.publication-summary {
+  color: #66756f;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* Bouton PDF */
+
+.publication-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #168a5b;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.publication-btn:hover {
+  background: #0e6844;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .publications-section {
+    padding: 65px 0;
+  }
+
+  .section-header h2 {
+    font-size: 30px;
+  }
+
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-image {
+    height: 220px;
+  }
+
+  .publication-content {
+    padding: 22px;
+  }
+
+  .publication-content h3 {
+    font-size: 19px;
   }
 }
-
-@media(max-width:600px){
-  .publications-grid{
-    grid-template-columns:1fr;
-  }
 }</style>
 </head>
 <body>
