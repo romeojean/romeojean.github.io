@@ -1,1049 +1,1227 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site professionnel de RANDRIAMAROZANDRY Jean Roméo — Agriculture, Biochimie alimentaire et ressources naturelles.">
-  <title>Jean Roméo | Agriculture • Biochimie • Nature</title>
-  <style>
-    :root{
-      --green:#159447;
-      --green-dark:#08783a;
-      --blue:#063d70;
-      --blue-dark:#062d50;
-      --light:#f3faf7;
-      --text:#123654;
-      --muted:#5e7285;
-      --white:#fff;
-      --shadow:0 12px 35px rgba(10,55,80,.10);
-      --radius:22px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,Segoe UI,Arial,sans-serif;
-      color:var(--text);background:#fff;line-height:1.6;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px,92%);margin:auto}
-    header{
-      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);
-      backdrop-filter:blur(12px);border-bottom:1px solid #e7eef2;
-    }
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue)}
-    .brand-mark{
-      width:45px;height:45px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--blue));
-      display:grid;place-items:center;color:#fff;font-size:24px;
-    }
-    .brand small{display:block;font-size:11px;color:var(--muted);font-weight:600}
-    nav{display:flex;gap:27px;align-items:center}
-    nav a{font-size:14px;font-weight:600}
-    nav a:hover,nav a.active{color:var(--green)}
-    .cv-btn,.btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;
-    }
-    .cv-btn{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff;font-size:13px}
-    .menu{display:none;font-size:26px;background:none;border:0;color:var(--blue)}
-    .hero{
-      min-height:570px;display:grid;align-items:center;position:relative;overflow:hidden;
-      background:
-        linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 43%,rgba(255,255,255,.10) 75%),
-        url("andasilava.jpg") center/cover;
-    }
-    .hero-content{padding:80px 0}
-    .eyebrow{color:var(--green);font-weight:900;letter-spacing:.7px;text-transform:uppercase;font-size:13px}
-    h1{font-size:clamp(42px,6vw,76px);line-height:1.02;margin:14px 0;color:var(--blue)}
-    h1 span{color:var(--green)}
-    .hero p{max-width:650px;color:#29465e;font-size:18px}
-    .hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-    .btn-primary{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff}
-    .btn-secondary{border:1px solid #d8e5eb;background:#fff;color:var(--blue)}
-    section{padding:90px 0}
-    .section-label{color:var(--green);font-weight:900;font-size:14px}
-    .section-title{font-size:clamp(30px,4vw,46px);line-height:1.15;color:var(--blue);margin:7px 0 15px}
-    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
-    .portrait{
-      border-radius:40px;overflow:hidden;box-shadow:var(--shadow);position:relative;
-    }
-    .portrait img{width:100%;height:470px;object-fit:cover}
-    .quote{
-      position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.92);
-      padding:14px 18px;border-radius:15px;font-weight:800;color:var(--green-dark)
-    }
-    .about-text{color:var(--muted);font-size:17px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
-    .stat{padding:18px;border:1px solid #e5edf1;border-radius:18px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,.04)}
-    .stat strong{display:block;color:var(--blue);font-size:19px}
-    .skills{background:linear-gradient(180deg,#f3faf7,#eef7fb)}
-    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
-    .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid #e9f0f3}
-    .card-body{padding:25px}
-    .icon{font-size:32px}
-    .card h3{color:var(--blue);margin:8px 0}
-    .card ul{list-style:none;color:var(--muted);font-size:14px}
-    .card li{margin:7px 0}.card li::before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
-    .card img{height:190px;width:100%;object-fit:cover}
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
-    .project{border:1px solid #e5edf1;border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
-    .project img{height:210px;width:100%;object-fit:cover}
-    .project div{padding:20px}.project h3{color:var(--blue);font-size:18px}.project p{color:var(--muted);font-size:14px}
-    .gallery{background:#f4fafc}
-    .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}
-    .gallery-grid img{height:180px;width:100%;object-fit:cover;border-radius:16px}
-    .contact{background:linear-gradient(135deg,var(--blue-dark),#07517a);color:#fff}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
-    .contact h2{color:#fff}.contact p{color:#d8e7ef}
-    .contact-list{margin-top:25px;display:grid;gap:12px}
-    form{display:grid;gap:13px}
-    input,textarea{width:100%;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:#fff;outline:none}
-    input::placeholder,textarea::placeholder{color:#c7d7df}
-    textarea{min-height:140px;resize:vertical}
-    .send{background:linear-gradient(90deg,#18b950,#0b65a2);color:#fff}
-    footer{background:#041f36;color:#c8d8e1;padding:25px 0;font-size:13px}
-    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:900px){
-      nav,.cv-btn{display:none}.menu{display:block}
-      .hero{min-height:650px;background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.55)),url("andasilava.jpg") center/cover}
-      .about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}
-      .skills-grid,.projects-grid{grid-template-columns:1fr 1fr}
-      .gallery-grid{grid-template-columns:repeat(3,1fr)}
-    }
-    @media(max-width:600px){
-      section{padding:65px 0}.hero-content{padding:55px 0}
-      h1{font-size:46px}.hero p{font-size:16px}
-      .stats,.skills-grid,.projects-grid{grid-template-columns:1fr}
-      .gallery-grid{grid-template-columns:1fr 1fr}
-      .gallery-grid img{height:145px}
-      .portrait img{height:390px}
-    }
- /* =========================
-   MES PROJETS
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jean Roméo | Agriculture • Biochimie • Nature</title>
+
+<style>
+/* =========================
+   VARIABLES
 ========================= */
-
-#projets {
-  background: #f3faf7;
-  padding: 90px 0;
+:root{
+    --vert:#176b45;
+    --vert-clair:#eaf6ef;
+    --bleu:#075985;
+    --bleu-clair:#eef8fc;
+    --blanc:#ffffff;
+    --texte:#24323d;
+    --gris:#66727c;
+    --fond:#f7faf8;
+    --ombre:0 12px 35px rgba(0,0,0,.08);
 }
 
-.projets-intro {
-  max-width: 780px;
-  margin: 0 auto 45px;
-  text-align: center;
-  color: var(--muted);
-  line-height: 1.8;
+/* =========================
+   BASE
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-.grille-projets {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--texte);
+    background:var(--blanc);
+    line-height:1.7;
 }
 
-.projet {
-  position: relative;
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 30px;
-  border: 1px solid #dceee8;
-  box-shadow: var(--shadow);
-  transition: transform .3s ease, box-shadow .3s ease;
-  overflow: hidden;
+img{
+    max-width:100%;
+    display:block;
 }
 
-.projet:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 18px 40px rgba(10, 55, 80, .14);
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
-.projet-annee {
-  display: inline-block;
-  background: linear-gradient(
-    135deg,
-    var(--green),
-    var(--blue)
-  );
-  color: white;
-  font-weight: 800;
-  padding: 8px 18px;
-  border-radius: 999px;
-  margin-bottom: 20px;
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-.projet h3 {
-  font-size: 23px;
-  line-height: 1.35;
-  color: var(--text);
-  margin-bottom: 14px;
+/* =========================
+   HEADER
+========================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    box-shadow:0 3px 20px rgba(0,0,0,.06);
 }
 
-.projet-lieu {
-  color: var(--green-dark);
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 18px;
+.header-inner{
+    min-height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
-.projet p {
-  color: var(--muted);
-  line-height: 1.75;
-  margin-bottom: 15px;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.projet-resultat {
-  background: #eef9f4;
-  border-left: 4px solid var(--green);
-  padding: 14px 16px;
-  border-radius: 10px;
-  margin: 20px 0;
-  color: var(--text);
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--vert);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
 }
 
-.projet-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 22px;
+.logo-text strong{
+    display:block;
+    color:var(--vert);
+    font-size:20px;
 }
 
-.projet-tags span {
-  background: #edf6f5;
-  color: var(--green-dark);
-  border: 1px solid #d4e9e3;
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
+.logo-text span{
+    color:var(--gris);
+    font-size:13px;
 }
 
-.projet-important {
-  border: 2px solid var(--green);
+/* Navigation desktop */
+.desktop-nav{
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-/* Téléphone */
-@media (max-width: 760px) {
+.desktop-nav a{
+    font-size:14px;
+    font-weight:600;
+    color:#34434d;
+    transition:.3s;
+}
 
-  #projets {
-    padding: 65px 0;
-  }
+.desktop-nav a:hover{
+    color:var(--vert);
+}
 
-  .grille-projets {
-    grid-template-columns: 1fr;
-  }
+.cv-btn{
+    background:var(--vert);
+    color:white !important;
+    padding:11px 17px;
+    border-radius:25px;
+}
 
-  .projet {
-    padding: 24px;
-  }
+/* Mobile */
+.menu-toggle{
+    display:none;
+    border:0;
+    background:var(--vert);
+    color:white;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:24px;
+    cursor:pointer;
+}
 
-  .projet h3 {
-    font-size: 20px;
-  }
+.mobile-nav{
+    display:none;
+    background:white;
+    border-top:1px solid #eee;
+    padding:15px 5%;
+}
+
+.mobile-nav.active{
+    display:flex;
+    flex-direction:column;
+}
+
+.mobile-nav a{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    font-weight:600;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(90deg,
+        rgba(5,45,30,.90),
+        rgba(5,45,30,.55),
+        rgba(5,45,30,.20)),
+        url("images/hero.jpg") center/cover no-repeat;
+    color:white;
+}
+
+.hero-content{
+    max-width:760px;
+    padding:80px 0;
+}
+
+.hero-small{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,72px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:clamp(20px,3vw,30px);
+    font-weight:400;
+    margin-bottom:25px;
+}
+
+.hero p{
+    max-width:680px;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:white;
+    color:var(--vert);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:var(--vert);
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-top:8px;
+}
+
+.section-title p{
+    max-width:700px;
+    margin:12px auto 0;
+    color:var(--gris);
+}
+
+/* =========================
+   A PROPOS
+========================= */
+.about{
+    background:var(--fond);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:420px;
+    border-radius:25px;
+    background:
+        url("images/about.jpg")
+        center/cover no-repeat;
+    box-shadow:var(--ombre);
+}
+
+.about-text h3{
+    color:var(--vert);
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    margin-bottom:15px;
+}
+
+/* =========================
+   COMPETENCES
+========================= */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.skill-card{
+    padding:35px 28px;
+    border-radius:20px;
+    background:white;
+    box-shadow:var(--ombre);
+    border-top:5px solid var(--vert);
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-7px);
+}
+
+.skill-icon{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:var(--vert-clair);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.skill-card h3{
+    color:var(--vert);
+    margin-bottom:10px;
+}
+
+/* =========================
+   PROJETS
+========================= */
+.projects{
+    background:var(--fond);
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.project-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--ombre);
+}
+
+.project-image{
+    height:220px;
+    background:
+        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+        url("images/projet-placeholder.jpg")
+        center/cover no-repeat;
+}
+
+.project-content{
+    padding:28px;
+}
+
+.project-year{
+    color:var(--vert);
+    font-weight:bold;
+}
+
+.project-content h3{
+    margin:8px 0 12px;
+}
+
 /* =========================
    PUBLICATIONS
 ========================= */
-
-.publications-section {
-  background: #f3faf7;
-  padding: 90px 0;
+.publications-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
 }
 
-.publications-section .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+.publication-card{
+    background:white;
+    border:1px solid #e5ece8;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:var(--ombre);
 }
 
-/* En-tête */
-
-.section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px;
+.publication-image{
+    height:230px;
+    background:
+        url("images/publication-placeholder.jpg")
+        center/cover no-repeat;
 }
 
-.section-badge {
-  display: inline-block;
-  color: #168a5b;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+.publication-content{
+    padding:28px;
 }
 
-.section-header h2 {
-  font-size: 38px;
-  margin: 0 0 15px;
-  color: #123b31;
+.publication-content h3{
+    color:var(--bleu);
+    margin-bottom:12px;
 }
 
-.section-header p {
-  color: #64746e;
-  line-height: 1.7;
+.publication-meta{
+    color:var(--gris);
+    font-size:14px;
+    margin-bottom:15px;
 }
 
-/* Grille */
-
-.publications-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-/* Carte */
-
-.publication-card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.publication-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Image */
-
-.publication-image {
-  position: relative;
-  height: 240px;
-  overflow: hidden;
-  background: #dfeee8;
-}
-
-.publication-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.publication-year {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #168a5b;
-  color: white;
-  padding: 7px 13px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* Contenu */
-
-.publication-content {
-  padding: 28px;
-}
-
-.publication-type {
-  font-size: 12px;
-  color: #168a5b;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.publication-content h3 {
-  color: #123b31;
-  font-size: 21px;
-  line-height: 1.4;
-  margin: 10px 0 18px;
-}
-
-.publication-authors {
-  border-left: 3px solid #168a5b;
-  padding-left: 13px;
-  margin-bottom: 18px;
-}
-
-.publication-authors p {
-  margin: 4px 0;
-  color: #566861;
-  font-size: 14px;
-}
-
-.publication-summary {
-  color: #66756f;
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
-
-/* Bouton PDF */
-
-.publication-btn {
-  display: inline-block;
-  text-decoration: none;
-  background: #168a5b;
-  color: white;
-  padding: 11px 20px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: background 0.3s ease;
-}
-
-.publication-btn:hover {
-  background: #0e6844;
+.read-btn{
+    display:inline-block;
+    background:var(--bleu);
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    margin-top:12px;
 }
 
 /* =========================
-   MOBILE
+   GALERIE
 ========================= */
-
-@media (max-width: 768px) {
-
-  .publications-section {
-    padding: 65px 0;
-  }
-
-  .section-header h2 {
-    font-size: 30px;
-  }
-
-  .publications-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .publication-image {
-    height: 220px;
-  }
-
-  .publication-content {
-    padding: 22px;
-  }
-
-  .publication-content h3 {
-    font-size: 19px;
-  }
-}.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 38px;
-    color: #064b73;
-    cursor: pointer;
+.gallery{
+    background:var(--fond);
 }
 
-.nav-menu {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: #064b73;
-    font-weight: 600;
+.gallery-item{
+    height:220px;
+    border-radius:15px;
+    background:
+        url("images/galerie-placeholder.jpg")
+        center/cover no-repeat;
 }
 
-/* Version téléphone */
-@media (max-width: 768px) {
+/* =========================
+   CONTACT
+========================= */
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
 
-    .menu-toggle {
-        display: block;
+.contact-card{
+    background:var(--fond);
+    padding:35px;
+    border-radius:20px;
+}
+
+.contact-card h3{
+    color:var(--vert);
+    margin-bottom:20px;
+}
+
+.contact-item{
+    margin:15px 0;
+}
+
+.contact-item strong{
+    display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:#102f24;
+    color:white;
+    padding:45px 0 25px;
+    text-align:center;
+}
+
+footer p{
+    margin-bottom:8px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.footer-links a:hover{
+    color:#9ee0ba;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:950px){
+
+    .desktop-nav{
+        display:none;
     }
 
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        width: 220px;
-        background: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        z-index: 1000;
+    .menu-toggle{
+        display:block;
     }
 
-    .nav-menu.active {
-        display: flex;
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
     }
 
-    .nav-menu a {
-        padding: 14px 10px;
-        border-bottom: 1px solid #eee;
+    .skills-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .projects-grid,
+    .publications-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
     }
 }
-}</style>
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero{
+        min-height:580px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item{
+        height:160px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .header-inner{
+        min-height:70px;
+    }
+}
+</style>
 </head>
-  <script>
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
 
-menuToggle.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-});
-</script>
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#accueil">
-      <div class="brand-mark">🌱</div>
-      <div>Jean Roméo<small>Agriculture • Biochimie • Nature</small></div>
-    </a>
-    <nav>
-      <a class="active" href="#accueil">Accueil</a>
-      <a href="#apropos">À propos</a>
-      <a href="#competences">Compétences</a>
-      <a href="#projets">Projets</a>
-      <a href="#publications">Publications</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-      <a href="#Facebook">Facebook</a>
-      <a href="#WhatsApp">WhatsApp</a>
-    </nav>
-    <a class="cv-btn" href="CV site web.pdf"
-      target="_blank">
-      Télécharger mon CV
-    </a>
-    <button class="menu-toggle" id="menuToggle">
-    ☰
-</button>
 
-<nav class="nav-menu" id="navMenu">
+<!-- =========================
+     HEADER
+========================= -->
+<header>
+
+<div class="container header-inner">
+
+    <a href="#accueil" class="logo">
+
+        <div class="logo-icon">🌱</div>
+
+        <div class="logo-text">
+            <strong>Jean Roméo</strong>
+            <span>Agriculture • Biochimie • Nature</span>
+        </div>
+
+    </a>
+
+    <nav class="desktop-nav">
+
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#publications">Publications</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+
+        <a href="CV site web.pdf"
+           class="cv-btn"
+           target="_blank">
+           Télécharger mon CV
+        </a>
+
+    </nav>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Ouvrir le menu">
+        ☰
+    </button>
+
+</div>
+
+<nav class="mobile-nav" id="mobileNav">
+
     <a href="#accueil">Accueil</a>
     <a href="#apropos">À propos</a>
     <a href="#competences">Compétences</a>
-    <a href="#projets">Mes projets</a>
+    <a href="#projets">Projets</a>
     <a href="#publications">Publications</a>
+    <a href="#galerie">Galerie</a>
     <a href="#contact">Contact</a>
+
 </nav>
-  </div>
+
 </header>
 
-<main>
-  <section id="accueil" class="hero">
-    <div class="container hero-content">
-      <div class="eyebrow">Bienvenue sur mon site</div>
-      <h1>RANDRIAMAROZANDRY<br><span>Jean Roméo</span></h1>
-      <p><strong>Animateur Rural • Technicien Agricole • Biochimiste</strong><br>
-      Technicien en biochimie alimentaire et valorisation des ressources naturelles.</p>
-      <p style="margin-top:12px;font-style:italic">Agir aujourd'hui pour une agriculture durable et un avenir meilleur.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">✉ Me contacter →</a>
-        <a class="btn btn-secondary" href="#projets">Découvrir mes projets</a>
-      </div>
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+<section class="hero" id="accueil">
+
+<div class="container">
+
+<div class="hero-content">
+
+    <div class="hero-small">
+        Bienvenue sur mon site
     </div>
-  </section>
 
-  <section id="apropos">
-    <div class="container about-grid">
-      <div class="portrait">
-        <img src="Ambanitaza.jpg" alt="Agriculture">
-        <div class="quote">« La nature est une richesse à préserver. »</div>
-      </div>
-      <div>
-        <div class="section-label">À propos de moi</div>
-        <h2 class="section-title">Qui suis-je ?</h2>
-        <p class="about-text">Je suis RANDRIAMAROZANDRY Jean Roméo, passionné par le développement rural, l'agriculture durable et la valorisation des ressources naturelles. Avec une formation en biochimie alimentaire et une expérience de terrain, je m'engage à contribuer à des solutions innovantes pour améliorer la production agricole, la sécurité alimentaire et la préservation de notre environnement.</p>
-        <div class="stats">
-          <div class="stat"><strong>+3 ans</strong><span>d'expérience</span></div>
-          <div class="stat"><strong>SAVA,Nord Est Madagascar</strong><span>et à l'international</span></div>
-          <div class="stat"><strong>Passionné</strong><span>par la developpement durable(Social, économie et environnement)</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h1>
+        RANDRIAMAROZANDRY<br>
+        Jean Roméo
+    </h1>
 
-  <section id="competences" class="skills">
-    <div class="container">
-      <div class="section-label">Mes compétences</div>
-      <h2 class="section-title">Des compétences au service<br>du développement durable</h2>
-      <div class="skills-grid">
-        <article class="card"><div class="card-body"><div class="icon">🌱</div><h3>Agriculture</h3><ul><li>Production agricole</li><li>Conseil et accompagnement</li><li>Gestion des exploitations</li></ul></div><img src="Développement durable.jpg" alt="Agriculture"></article>
-        <article class="card"><div class="card-body"><div class="icon">🧪</div><h3>Biochimie alimentaire</h3><ul><li>Analyse des aliments</li><li>Transformation alimentaire</li><li>Valorisation des ressources</li></ul></div><img src="laboratoire[1].jpg" alt="Biochimie"></article>
-        <article class="card"><div class="card-body"><div class="icon">🌳</div><h3>Ressources naturelles</h3><ul><li>Protection de l'environnement</li><li>Gestion durable</li><li>Valorisation des ressources</li></ul></div><img src="chips.jpg" alt="Nature"></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projets">
-  <div class="container">
-
-    <div class="section-label">MES PROJETS</div>
-
-    <h2 class="section-title">
-      Des actions concrètes pour l'agriculture et la protection de l'environnement
+    <h2>
+        Animateur Rural • Technicien Agricole • Biochimiste
     </h2>
 
-    <p class="projets-intro">
-      À travers mes activités de terrain, je participe à l'accompagnement
-      des communautés locales, au développement des pratiques agricoles
-      durables et à la protection des ressources naturelles dans la région SAVA.
+    <p>
+        Animateur Rural, Technicien Agricole,
+        Technicien Biochimie Alimentaire &
+        valorisation des ressources naturelles.
     </p>
 
-    <div class="grille-projets">
+    <div class="hero-buttons">
 
-      <!-- PROJET 2024 -->
-      <article class="projet">
-        <div class="projet-annee">2024</div>
+        <a href="#apropos" class="btn btn-primary">
+            Découvrir mon parcours
+        </a>
 
-        <div class="projet-contenu">
-          <h3>
-            Formation et valorisation des cultures maraîchères
-          </h3>
-
-          <p class="projet-lieu">
-            📍 Ambanitaza – Fokontany Andrapengy,
-            Commune Rurale Ampahana, Région SAVA, Madagascar
-          </p>
-
-          <p>
-            Organisation de formations destinées aux communautés locaux
-            autour d'Ambanitaza et de la VOI Andrapengy sur les différentes
-            étapes des cultures maraîchères, Agroforesterie et séchages.
-          </p>
-
-          <p>
-            Les formations ont été accompagnées par des activités pratiques
-            permettant aux participants de mettre directement en application
-            les techniques apprises et de produire les cultures présentées.
-          </p>
-
-          <div class="projet-tags">
-            <span>Agriculture</span>
-            <span>Formation</span>
-            <span>Production</span>
-            <span>Communauté locale</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- PROJET 2025 -->
-      <article class="projet">
-        <div class="projet-annee">2025</div>
-
-        <div class="projet-contenu">
-          <h3>
-            Renforcement de la collaboration entre les communautés locaux
-          </h3>
-
-          <p class="projet-lieu">
-            📍 Ambanitaza et les communautés environnantes – Région SAVA
-          </p>
-
-          <p>
-            Mise en place et renforcement de la collaboration (convention) entre
-            les sept (07) comités communautaires autour de montagne d'Ambanitaza :
-            Maromokotra, Andrapengy, Andasilava, Ampobe, Betaomby,
-            Tsaratanana et Beamponga.
-          </p>
-
-          <p>
-            Les activités ont porté sur l'organisation de formations,
-            la mise à disposition de matériels nécessaires à la production
-            et l'accompagnement des communautés dans la réalisation de
-            leurs besoins prioritaires.
-          </p>
-
-          <p>
-            Une distribution des +500 volailles a également été réalisée afin
-            de soutenir les activités d'élevages communautaires et de contribuer
-            indirectement au renforcement de la protection de l'environnement.
-          </p>
-
-          <div class="projet-tags">
-            <span>Collaboration</span>
-            <span>Formation</span>
-            <span>Développement local</span>
-            <span>Environnement</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- PROJET 2026 -->
-      <article class="projet projet-important">
-        <div class="projet-annee">2026</div>
-
-        <div class="projet-contenu">
-          <h3>
-            Reboisement et restauration environnementale à Ambanitaza le mois de février jusqu'à le mois de juin  2026
-          </h3>
-
-          <p class="projet-lieu">
-            📍 Ambanitaza – Région SAVA, Madagascar
-          </p>
-
-          <p>
-            Réalisation d'une opération de plantation de
-            <strong>+30 000 plants d'arbres</strong> sur le montagne
-            d'Ambanitaza, en collaboration avec les communautés
-            vivant dans les zones environnantes.
-          </p>
-
-          <p>
-            Cette action vise à renforcer la restauration des espaces
-            dégradés, à favoriser la participation communautaire et
-            à contribuer durablement à la protection des ressources naturelles d'Ambanitaza.
-          </p>
-
-          <div class="projet-resultat">
-            🌱 <strong>Résultat :</strong> +30 000 pépinière plantées
-          </div>
-
-          <div class="projet-tags">
-            <span>Reboisement</span>
-            <span>+20 000 pieds des plants ou pépinières</span>
-            <span>Environnement</span>
-            <span>Participation communautaire</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- PROJET PEPINIERE -->
-      <article class="projet">
-        <div class="projet-annee">2026</div>
-
-        <div class="projet-contenu">
-          <h3>
-            Mise en place des différents espèces des plantes et distribution de pépinières disponible dans le champs ecole créé(+10,000 pépinières disponible a chaque village cible)
-          </h3>
-
-          <p>
-            Mise en place d'un système de pépinières et distribution
-            de plants aux membres des associations communautaires
-            autour d'Ambanitaza.
-          </p>
-
-          <p>
-            Cette démarche permet de responsabiliser chaque membre
-            dans la production et l'entretien des plants destinés
-            aux actions de restauration et de protection de l'environnement.
-          </p>
-
-          <div class="projet-tags">
-            <span>Pépinière</span>
-            <span>Reboisement</span>
-            <span>Associations</span>
-          </div>
-        </div>
-      </article>
-
-
-      <!-- PROJET TRANSFERT DE GESTION -->
-      <article class="projet">
-        <div class="projet-annee">2026</div>
-
-        <div class="projet-contenu">
-          <h3>
-            Transfert de gestion entre la VOI et la DREDD effectue le 09 juillet 2026
-          </h3>
-
-          <p>
-            Contribution à la réalisation du transfert de gestion
-            entre les communautés organisées au sein de la
-            <strong>VOI</strong> et la
-            <strong>Direction Régionale de l'Environnement et du
-            Développement Durable (DREDD)</strong>.
-          </p>
-
-          <p>
-            Cette démarche renforce la participation des communautés
-            locales dans la gestion durable et la protection des
-            ressources naturelles d'Ambanitaza.
-          </p>
-
-          <div class="projet-tags">
-            <span>VOI</span>
-            <span>DREDD</span>
-            <span>Gestion durable</span>
-            <span>Environnement</span>
-          </div>
-        </div>
-      </article>
+        <a href="#contact" class="btn btn-secondary">
+            Me contacter
+        </a>
 
     </div>
-  </div>
+
+</div>
+
+</div>
+
 </section>
-    <div class="container">
-      <div class="section-label">Mes projets</div>
-      <h2 class="section-title">Des actions concrètes</h2>
-      <div class="projects-grid">
-        <article class="project"><img src="Agriculture~2.jpg" alt=""><div><h3>Amélioration des rendements agricoles</h3><p>Soutien aux producteurs locaux.</p></div></article>
-        <article class="project"><img src="laboratoire[1].jpg" alt=""><div><h3>Analyse et valorisation des produits alimentaires</h3><p>Qualité et sécurité alimentaire.</p></div></article>
-        <article class="project"><img src="Ambanitaza.jpg" alt=""><div><h3>Protection des ressources naturelles</h3><p>Agir pour l'environnement.</p></div></article>
-      </div>
+
+
+<!-- =========================
+     A PROPOS
+========================= -->
+<section class="about" id="apropos">
+
+<div class="container">
+
+<div class="section-title">
+
+    <span>À propos</span>
+
+    <h2>Mon parcours</h2>
+
+</div>
+
+<div class="about-grid">
+
+    <div class="about-image"></div>
+
+    <div class="about-text">
+
+        <h3>RANDRIAMAROZANDRY Jean Roméo</h3>
+
+        <!--
+        CONSERVEZ ICI VOTRE TEXTE
+        "À PROPOS" EXISTANT.
+        -->
+
+        <p>
+            Animateur Rural, Technicien Agricole,
+            Technicien Biochimie Alimentaire &
+            valorisation des ressources naturelles.
+        </p>
+
+        <p>
+            Mon travail s'intéresse au développement rural,
+            à l'agriculture, à la valorisation des ressources
+            naturelles et à la protection de l'environnement.
+        </p>
+
     </div>
-  </section><!-- =========================
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPETENCES
+========================= -->
+<section id="competences">
+
+<div class="container">
+
+<div class="section-title">
+
+    <span>Mon savoir-faire</span>
+
+    <h2>Compétences</h2>
+
+    <p>
+        Mes domaines de compétences et d'intervention.
+    </p>
+
+</div>
+
+<div class="skills-grid">
+
+    <article class="skill-card">
+
+        <div class="skill-icon">🌱</div>
+
+        <h3>Agriculture</h3>
+
+        <p>
+            Techniques agricoles, accompagnement
+            des producteurs et développement rural.
+        </p>
+
+    </article>
+
+
+    <article class="skill-card">
+
+        <div class="skill-icon">🧪</div>
+
+        <h3>Biochimie alimentaire</h3>
+
+        <p>
+            Biochimie alimentaire et valorisation
+            des ressources naturelles.
+        </p>
+
+    </article>
+
+
+    <article class="skill-card">
+
+        <div class="skill-icon">🌳</div>
+
+        <h3>Ressources naturelles</h3>
+
+        <p>
+            Valorisation des ressources naturelles,
+            environnement et protection des écosystèmes.
+        </p>
+
+    </article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJETS
+========================= -->
+<section class="projects" id="projets">
+
+<div class="container">
+
+<div class="section-title">
+
+    <span>Mes réalisations</span>
+
+    <h2>Mes projets</h2>
+
+    <p>
+        Quelques expériences et réalisations
+        dans le développement rural et agricole.
+    </p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<!-- PROJET 2024 -->
+<article class="project-card">
+
+    <div class="project-image"></div>
+
+    <div class="project-content">
+
+        <div class="project-year">2024</div>
+
+        <h3>
+            Asa manodidina Ambanitaza
+        </h3>
+
+        <p>
+            Fokontany Andrapengy, Commune Rurale Ampahana,
+            Région SAVA, Madagascar.
+        </p>
+
+        <p>
+            Formation sur le « voly avotra » :
+            mandravina, mamoa, mamody ary mamelana.
+            Mise en œuvre et production avec les populations
+            locales autour de VOI Andrapengy.
+        </p>
+
+    </div>
+
+</article>
+
+
+<!-- PROJET 2025 -->
+<article class="project-card">
+
+    <div class="project-image"></div>
+
+    <div class="project-content">
+
+        <div class="project-year">2025</div>
+
+        <h3>
+            Collaboration des comités locaux
+        </h3>
+
+        <p>
+            Renforcement de la collaboration entre
+            7 comités locaux autour d'Ambanitaza :
+            Maromokotra, Andrapengy, Andasilava,
+            Ampobe, Betaomby, Tsaratanana et Beamponga.
+        </p>
+
+        <p>
+            Formation, dotation en équipements de production
+            et distribution de poulets afin de renforcer
+            le soutien à la protection de l'environnement.
+        </p>
+
+    </div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
      PUBLICATIONS
 ========================= -->
-<section id="publications" class="publications-section">
-  <div class="container">
+<section id="publications">
 
-    <div class="section-header">
-      <span class="section-badge">PUBLICATIONS</span>
-      <h2>Mes Publications</h2>
-      <p>
-        Découvrez mes travaux de recherche, publications scientifiques
-        et travaux académiques dans les domaines de l'agriculture,
-        de l'agroforesterie et de la valorisation des ressources naturelles.
-      </p>
-    </div>
+<div class="container">
 
-    <div class="publications-grid">
+<div class="section-title">
 
-      <!-- ==================================================
-           PUBLICATION 1
-           👉 IMAGE : remplacez "images/publication1.jpg"
-           👉 PDF   : remplacez "Agroforestry adoption Herrera.pdf"
-      =================================================== -->
-      <article class="publication-card">
+    <span>Recherche & publications</span>
 
-        <div class="publication-image">
-          <img
-            src="images/publication1.jpg"
-            alt="Adoption de l'agroforesterie régénératrice dans le nord-est de Madagascar"
-          >
-          <span class="publication-year">2026</span>
-        </div>
+    <h2>Publications</h2>
 
-        <div class="publication-content">
+    <p>
+        Articles, études et travaux liés à l'agriculture,
+        au développement rural et à la valorisation
+        des ressources naturelles.
+    </p>
 
-          <span class="publication-type">ARTICLE SCIENTIFIQUE</span>
+</div>
 
-          <h3>
+
+<div class="publications-grid">
+
+
+<!-- PUBLICATION 1 -->
+<article class="publication-card">
+
+    <div class="publication-image"></div>
+
+    <div class="publication-content">
+
+        <h3>
             Adoption de l'agroforesterie régénératrice
             dans le nord-est de Madagascar
-          </h3>
+        </h3>
 
-          <div class="publication-authors">
-            <p><strong>Auteur :</strong> James P. Herrera</p>
-            <p><strong>Co-auteur :</strong> RANDRIAMAROZANDRY Jean Roméo</p>
-          </div>
-
-          <p class="publication-summary">
-            Cette publication analyse l’adoption de pratiques
-            d’agroforesterie régénératrice dans le nord-est de Madagascar.
-            Elle met en évidence les pratiques agricoles et
-            environnementales favorisant la restauration des sols,
-            l’amélioration de la productivité et le renforcement de la
-            résilience des communautés rurales.
-          </p>
-
-          <!-- 👉 PDF : remplacez seulement le nom du fichier -->
-          <a href="Agroforestry adoption Herrera.pdf"
-             target="_blank"
-             class="publication-btn">
-            📄 Lire la publication
-          </a>
-
-        </div>
-      </article>
-
-
-      <!-- ==================================================
-           PUBLICATION 2
-           👉 IMAGE : images/publication2.jpg
-           👉 PDF   : https://lemur.duke.edu/mada-food-security/
-      =================================================== -->
-      <article class="publication-card">
-
-        <div class="publication-image">
-          <img
-            src="images/publication2.jpg"
-            alt="Program in Rural Madagascar Boosts Food Security and Women's Empowerment"
-          >
-          <span class="publication-year">Déc. 2025</span>
+        <div class="publication-meta">
+            James P. Herrera<br>
+            Co-auteur : RANDRIAMAROZANDRY Jean Roméo<br>
+            2026
         </div>
 
-        <div class="publication-content">
+        <p>
+            Publication consacrée à l'adoption de
+            l'agroforesterie régénératrice dans
+            le nord-est de Madagascar.
+        </p>
 
-          <span class="publication-type">ARTICLE / ÉTUDE</span>
+        <a href="pdf/publication1.pdf"
+           target="_blank"
+           class="read-btn">
+           Lire la publication
+        </a>
 
-          <h3>
+    </div>
+
+</article>
+
+
+<!-- PUBLICATION 2 -->
+<article class="publication-card">
+
+    <div class="publication-image"></div>
+
+    <div class="publication-content">
+
+        <h3>
             Program in Rural Madagascar Boosts Food Security
             and Women’s Empowerment, Duke Study Finds
-          </h3>
+        </h3>
 
-          <div class="publication-authors">
-            <p><strong>Auteur :</strong> James P. Herrera, DUKE LEMUR CENTER SAVA Conservation projects in Madagascar</p>
-            <p><strong>Equipe technique :</strong> RANDRIAMAROZANDRY Jean Roméo</p>
-          </div>
-
-          <p class="publication-summary">
-            Cette publication présente les résultats d’un programme mené
-            en milieu rural à Madagascar visant à améliorer la sécurité
-            alimentaire et à renforcer l’autonomisation des femmes.
-            L’étude met en lumière les effets des interventions agricoles
-            sur les moyens de subsistance et le développement communautaire.
-          </p>
-
-          <!-- 👉 PDF -->
-          <a href="https://lemur.duke.edu/mada-food-security"
-             target="_blank"
-             class="publication-btn">
-            📄 Lire la publication
-          </a>
-
-        </div>
-      </article>
-
-
-      <!-- ==================================================
-           PUBLICATION 3
-           👉 IMAGE : Firasana fitaovana.jpg
-           👉 PDF   : https://doi.org/10.3390/su172411134
-      =================================================== -->
-      <article class="publication-card">
-
-        <div class="publication-image">
-          <img
-            src="Firasana fitaovana.jpg"
-            alt="Evaluating the Efficacy of Agricultural Interventions in Northeast Madagascar"
-          >
-          <span class="publication-year">Déc. 2025</span>
+        <div class="publication-meta">
+            James P. Herrera<br>
+            Co-auteur : RANDRIAMAROZANDRY Jean Roméo<br>
+            Décembre 2025
         </div>
 
-        <div class="publication-content">
+        <p>
+            Étude consacrée au développement rural,
+            à la sécurité alimentaire et à l'autonomisation
+            des femmes à Madagascar.
+        </p>
 
-          <span class="publication-type">ARTICLE SCIENTIFIQUE</span>
-
-          <h3>
-            Evaluating the Efficacy of Agricultural Interventions
-            in Northeast Madagascar
-          </h3>
-
-          <div class="publication-authors">
-            <p><strong>Auteur :</strong> James P. Herrera</p>
-            <p><strong>Co-auteur :</strong> RANDRIAMAROZANDRY Jean Roméo</p>
-          </div>
-
-          <p class="publication-summary">
-            Cette étude évalue l’efficacité de différentes interventions
-            agricoles mises en œuvre dans le nord-est de Madagascar.
-            Elle s’intéresse notamment aux pratiques agricoles,
-            à la production, à la sécurité alimentaire et aux conditions
-            de vie des populations rurales.
-          </p>
-
-          <!-- 👉 PDF -->
-           <a class="cv-btn" href="https://doi.org/10.3390/su172411134"
-      target="_blank">
-             class="publication-btn">
-            📄 Lire la publication
-          </a>
-
-        </div>
-      </article>
-
-      <!-- ==================================================
-           PUBLICATION 4
-           👉 IMAGE : images/publication4.jpg
-           👉 PDF   : pdf/publication4.pdf
-      =================================================== -->
-      <article class="publication-card">
-
-        <div class="publication-image">
-          <img
-            src="images/publication4.jpg"
-            alt="Valorisation des fruits de jacquier"
-          >
-          <span class="publication-year">Déc. 2025</span>
-        </div>
-
-        <div class="publication-content">
-
-          <span class="publication-type">MÉMOIRE DE LICENCE</span>
-
-          <h3>
-            Perspective de valorisation des fruits de jacquiers :
-            cas de fabrication de jus et de chips
-          </h3>
-
-          <div class="publication-authors">
-            <p><strong>Auteur :</strong> RANDRIAMAROZANDRY Jean Roméo</p>
-          </div>
-
-          <p class="publication-summary">
-            Ce mémoire porte sur les perspectives de valorisation des
-            fruits de jacquier à travers leur transformation en produits
-            alimentaires, notamment en jus et en chips. Il explore le
-            potentiel de cette ressource locale pour la diversification
-            des produits agroalimentaires et la création de valeur locale.
-          </p>
-
-          <!-- 👉 PDF -->
-          <a href="Biochimie.pdf"
-             target="_blank"
-             class="Biochimie.pdf">
-            📄 Lire la publication
-          </a>
-
-        </div>
-      </article>
+        <a href="pdf/publication2.pdf"
+           target="_blank"
+           class="read-btn">
+           Lire la publication
+        </a>
 
     </div>
-  </div>
+
+</article>
+
+
+<!-- PUBLICATION 3 -->
+<article class="publication-card">
+
+    <div class="publication-image"></div>
+
+    <div class="publication-content">
+
+        <h3>
+            Evaluating the Efficacy of Agricultural
+            Interventions in Northeast Madagascar
+        </h3>
+
+        <div class="publication-meta">
+            James P. Herrera<br>
+            Co-auteur : RANDRIAMAROZANDRY Jean Roméo
+        </div>
+
+        <p>
+            Évaluation de l'efficacité des interventions
+            agricoles dans le nord-est de Madagascar.
+        </p>
+
+        <a href="pdf/publication3.pdf"
+           target="_blank"
+           class="read-btn">
+           Lire la publication
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- PUBLICATION 4 -->
+<article class="publication-card">
+
+    <div class="publication-image"></div>
+
+    <div class="publication-content">
+
+        <h3>
+            PERSPECTIVE DE VALORISATION DES FRUITS
+            DE JACQUIERS
+        </h3>
+
+        <div class="publication-meta">
+            Cas de fabrication de jus et de chips
+        </div>
+
+        <p>
+            Travail consacré à la valorisation des fruits
+            de jacquiers à travers la fabrication de jus
+            et de chips.
+        </p>
+
+        <a href="pdf/publication4.pdf"
+           target="_blank"
+           class="read-btn">
+           Lire la publication
+        </a>
+
+    </div>
+
+</article>
+
+</div>
+
+</div>
+
 </section>
- <section id="galerie" class="gallery">
-    <div class="container">
-      <div class="section-label">Ma galerie</div>
-      <h2 class="section-title">Quelques moments en images</h2>
-      <div class="gallery-grid">
-        <img src="andasilava.jpg" alt="">
-        <img src="Agriculture~2.jpg" alt="">
-        <img src="chips.jpg" alt="">
-        <img src="Développement durable.jpg" alt="">
-        <img src="laboratoire[1].jpg" alt="">
-      </div>
-    </div>
-  </section>
 
-  <section id="contact" class="+261322605263">
-    <div class="container contact-grid">
-      <div>
-        <div class="section-label">Me contacter</div>
-        <h2 class="section-title">Construisons ensemble des solutions durables.</h2>
-        <p>Vous avez un projet en agriculture, biochimie alimentaire ou valorisation des ressources naturelles ? Écrivez-moi.</p>
-        <div class="contact-list">
-          <div>📞 +261322605263</div>
-          <div>✉ meorussyoung@gmail.com</div>
-          <div>📍 Madagascar</div>
+
+<!-- =========================
+     GALERIE
+========================= -->
+<section class="gallery" id="galerie">
+
+<div class="container">
+
+<div class="section-title">
+
+    <span>Galerie</span>
+
+    <h2>Mes activités en images</h2>
+
+    <p>
+        Les images pourront être ajoutées ultérieurement.
+    </p>
+
+</div>
+
+<div class="gallery-grid">
+
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+    <div class="gallery-item"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+    <span>Contact</span>
+
+    <h2>Me contacter</h2>
+
+</div>
+
+<div class="contact-grid">
+
+    <div class="contact-card">
+
+        <h3>Coordonnées</h3>
+
+        <div class="contact-item">
+            <strong>Téléphone</strong>
+            0322605263 / 0325185210
         </div>
-      </div>
-      <form onsubmit="sendMessage(event)">
-        <input required type="text" placeholder="Votre nom ou your name">
-        <input required type="email" placeholder="Votre adresse email ou your email">
-        <textarea required placeholder="Bienvenue sur mon site web, je suis ravi de vous accueillir. Que puis-je faire pour vous, Madame / monsieur ?"></textarea>
-        <button class="btn send" type="submit">Envoyer →</button>
-      </form>
-    </div>
-  </section>
-</main>
 
+        <div class="contact-item">
+            <strong>Email</strong>
+            romeorussyoung@gmail.com
+        </div>
+
+    </div>
+
+
+    <div class="contact-card">
+
+        <h3>Restons en contact</h3>
+
+        <p>
+            Pour toute information concernant mes activités,
+            mes projets, mes publications ou une collaboration,
+            vous pouvez me contacter.
+        </p>
+
+        <br>
+
+        <a href="mailto:romeorussyoung@gmail.com"
+           class="btn"
+           style="background:#176b45;color:white;">
+           Envoyer un email
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
-  <div class="container footer-row">
-    <div>© 2026 RANDRIAMAROZANDRY Jean Roméo. Tous droits réservés.</div>
-    <div>Français • Malagasy • English</div>
-  </div>
+
+<div class="container">
+
+    <p>
+        <strong>RANDRIAMAROZANDRY Jean Roméo</strong>
+    </p>
+
+    <p>
+        Animateur Rural • Technicien Agricole •
+        Technicien Biochimie Alimentaire
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <p>
+        © 2026 Jean Roméo — Tous droits réservés.
+    </p>
+
+</div>
+
 </footer>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 <script>
-  function sendMessage(e){
-    e.preventDefault();
-    alert("Merci ! Le formulaire est prêt. Pour recevoir réellement les messages, il faudra connecter un service de formulaire ou une adresse email.");
-  }
-  function downloadCV(){
-    alert("Ajoutez votre fichier CV sous le nom CV-Jean-Romeo.pdf dans le dossier du site, puis remplacez ce bouton par un lien vers ce fichier.");
-  }
-  const links=[...document.querySelectorAll("nav a")];
-  const sections=[...document.querySelectorAll("main section")];
-  window.addEventListener("scroll",()=>{
-    let current="";
-    sections.forEach(s=>{if(scrollY>=s.offsetTop-140) current=s.id});
-    links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
-  });
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+menuToggle.addEventListener("click", function(){
+
+    mobileNav.classList.toggle("active");
+
+    if(mobileNav.classList.contains("active")){
+        menuToggle.textContent = "✕";
+    }else{
+        menuToggle.textContent = "☰";
+    }
+
+});
+
+
+/* Fermer automatiquement le menu après un clic */
+
+document.querySelectorAll(".mobile-nav a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        mobileNav.classList.remove("active");
+        menuToggle.textContent = "☰";
+
+    });
+
+});
+
 </script>
+
 </body>
 </html>
