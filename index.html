@@ -419,9 +419,69 @@
   .publication-content h3 {
     font-size: 19px;
   }
+}.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 38px;
+    color: #064b73;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #064b73;
+    font-weight: 600;
+}
+
+/* Version téléphone */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        width: 220px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 14px 10px;
+        border-bottom: 1px solid #eee;
+    }
 }
 }</style>
 </head>
+  <script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+});
+</script>
 <body>
 <header>
   <div class="container nav">
@@ -444,17 +504,18 @@
       target="_blank">
       Télécharger mon CV
     </a>
-    <button class="menu" onclick="alert('Sur mobile, utilisez les sections en faisant défiler la page.')">☰</button>
-      <nav>
-      <a href="#Accueil">À Acceuil<À
-      <a href="#apropos">À propos</À
-      <a href="#competences">Compétences</a>
-      <a href="#projets">Projets</a>
-      <a href="#publications">Publications</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
-      <a href="#Facebook">Facebook</a>
-      <a href="#WhatsApp">WhatsApp</a>
+    <button class="menu-toggle" id="menuToggle">
+    ☰
+</button>
+
+<nav class="nav-menu" id="navMenu">
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Mes projets</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+</nav>
   </div>
 </header>
 
