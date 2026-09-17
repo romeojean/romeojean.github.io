@@ -570,9 +570,40 @@ footer p{
         min-height:70px;
     }
 }
+   /* =========================
+   MENU : CV / PDF / WHATSAPP / FACEBOOK
+   ========================= */
+
+nav ul li a {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 0.75;
+  transform: translateY(-2px);
+}
 </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  // Ferme automatiquement le menu mobile
+  // lorsqu'un lien du menu est sélectionné
+  const menuLinks = document.querySelectorAll("nav a");
+
+  menuLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+      const menu = document.querySelector("nav ul");
+
+      if (menu) {
+        menu.classList.remove("active");
+      }
+    });
+  });
+
+});
+</script>
 <body>
 
 <!-- =========================
@@ -593,7 +624,23 @@ footer p{
 
     </a>
 
-    <nav class="desktop-nav">
+    <nav>
+       <!-- MENU SUPPLÉMENTAIRE -->
+<li><a href="cv.pdf" target="_blank">CV</a></li>
+
+<li><a href="pdf/publication1.pdf" target="_blank">PDF</a></li>
+
+<li>
+  <a href="https://wa.me/261322605263" target="_blank">
+    WhatsApp
+  </a>
+</li>
+
+<li>
+  <a href="https://www.facebook.com/" target="_blank">
+    Facebook
+  </a>
+</li>
 
         <a href="#accueil">Accueil</a>
         <a href="#apropos">À propos</a>
